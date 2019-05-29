@@ -21,7 +21,7 @@ let id4 = 32;
 console.log((id4 /= 7));
 let id5 = 71;
 console.log((id5 %= 17));
-// 방금한 것을 문자열로 바꿔보세요. (잘 모르겠습니다.)
+// 방금한 것을 문자열로 바꿔보세요.
 id1 = id1.toString();
 id2 = id2.toString();
 id3 = id3.toString();
@@ -30,107 +30,176 @@ id5 = id5.toString();
 console.log(typeof id1, typeof id2, typeof id3, typeof id4, typeof id5);
 console.log(id1, id2, id3, id4, id5);
 // 자유롭게 문자열 하나를 변수에 대입해보세요.
-const intro = "안녕하세요, 저는 김도화입니다";
+const intro = "안녕하세요, 저는 김도화입니다.";
 console.log(intro);
 // 그 문자열의 길이는?
 console.log(intro.length);
 // 그 문자열의 3번째 글자는 무엇인가요?
 console.log(intro.charAt(2));
 // 그 문자열의 마지막 글자를 숫자를 쓰지 않고 출력해보세요.
-
+console.log(intro.charAt(intro.length - 1));
 // 그 문자열에 “안녕"이라는 문자열이 포함되나요?
-
+console.log(intro.includes("안녕"));
 // 그 문자열의 5번째 글자부터 12번째 글자까지 출력해보세요.
-
+console.log(intro.substring(4, 11));
 // 문자열을 하나 더 만들어 변수에 대입해보고, 그 문자열과 첫번째 문자열을 합쳐보세요.
-
+const outro = " 반갑습니다";
+const dowha = intro + outro;
+console.log(dowha);
 // 방금한 것을 두 가지 다른 방법으로 해보세요.
-
+const dowha2 = intro.concat(outro);
+console.log(dowha2);
+const dowha3 = "안녕하세요, 저는 김도화입니다." + " " + "반갑습니다.";
+console.log(dowha3);
 // 쉼표(,)로 단어들을 나열한 다음 배열로 바꿔보세요.
-
+const cities = "부산, 서울, 포르츠하임, 요크, 방콕";
+console.log(cities.split(", "));
 // 쉼표(,)로 단어들을 나열한 다음, 단어의 개수를 세어보세요.
-
+const colours = "빨강, 파랑, 노랑, 초록";
+const coloursResult = colours.split(", ");
+console.log(coloursResult.length);
 // 배열을 하나 만들어 변수에 대입해 보세요
-
+const idol = ["엑소", "소녀시대", "샤이니", "워너원", "세븐틴"];
+console.log(idol);
 // 그 배열의 길이를 계산해보세요.
-
+console.log(idol.length);
 // 그 배열의 2번째 항목을 다른 것으로 바꿔보세요.
-
+const newIdol = idol.splice(1, 1, "여자친구");
+console.log(idol);
 // 다른 방법으로 해보세요.
-
+delete idol[1];
+idol[1] = "BTS";
+console.log(idol);
 // 그 배열의 3번째 항목을 없애보세요.
-
+delete idol[2];
+console.log(idol);
 // 그 배열의 2번째와 3번째 항목 사이에 다른 항목 3개를 넣어보세요.
-
+idol.splice(2, 0, "아이오아이", "오마이걸", "아이즈원");
 // 그 배열의 마지막에 한 항목을 넣어보세요.
-
+idol.push("트와이스");
+console.log(idol);
 // 그 배열의 마지막 항목을 없애보세요.
-
+idol.pop();
+console.log(idol);
 // 그 배열의 첫번째 자리에 한 항목을 넣어보세요.
-
+idol.unshift("NCT");
+console.log(idol);
 // 그 배열의 첫번째 항목을 없애보세요.
-
+idol.shift();
+console.log(idol);
 // 그 배열의 2번째부터 4번째 항목만 추출해보세요.
-
+console.log(idol.slice(1, 4));
 // 그 배열에 “포도"라는 항목이 포함되나요?
-
+console.log(idol.includes("포도"));
 // “사과" 라는 단어를 포함한 문자열의 배열을 만들어 변수에 저장해보세요.
-
+const fruits = ["사과", "딸기", "포도", "수박", "참외"];
+console.log(fruits);
 // “사과"는 몇번째에 있나요?
-
+console.log(fruits.indexOf("사과") + "번째");
 // 방금 만든 배열을 | 기호로 구분하여 하나의 문자열로 만들어보세요. (shift+백슬래시)
-
+console.log(fruits.join(" | "));
 // 만들어본 두 배열을 합쳐보세요.
-
+console.log(idol.concat(fruits));
 // 아래 모양을 가진 행렬을 배열로 표현해보세요. (행을 먼저 써보세요.)
-
+const matrix = [
+  [1, 2, 3, 4],
+  [5, 6, 7, 8],
+  [9, 10, 11, 12],
+  [13, 14, 15, 16],
+  [17, 18, 19, 20]
+];
+console.log(matrix);
+const matrixSecond = new Array();
+matrixSecond[0] = new Array();
+matrixSecond[1] = new Array();
+matrixSecond[2] = new Array();
+matrixSecond[3] = new Array();
+matrixSecond[4] = new Array();
+matrixSecond[0] = [1, 2, 3, 4];
+matrixSecond[1] = [5, 6, 7, 8];
+matrixSecond[2] = [9, 10, 11, 12];
+matrixSecond[3] = [13, 14, 15, 16];
+matrixSecond[4] = [17, 18, 19, 20];
+console.log(matrixSecond);
 // 위의 모양을 가진 행렬을 배열로 표현해보세요. (열을 먼저 써보세요.)
-
+console.log("*잘 모르겠습니다.");
 // name 이라는 key를 포함하는 객체를 하나 만들어 변수에 대입해보세요.
-
+const dowhaKim = { name: "Dowha Kim", age: 29, location: "Bangkok" };
+console.log(dowhaKim);
 // 그 객체의 name 이라는 key의 value를 출력해보세요.
-
+const name = dowhaKim.name;
+console.log(name);
 // 그 객체의 name 이라는 key의 value를 다른 것으로 바꿔보세요.
-
+dowhaKim.name = "Fado";
+console.log(dowhaKim);
 // 그 객체에는 어떤 key들이 있나요?
-
+console.log(Object.keys(dowhaKim));
 // 그 객체에는 어떤 value들이 있나요?
-
+console.log(
+  dowhaKim[Object.keys(dowhaKim)[0]],
+  dowhaKim[Object.keys(dowhaKim)[1]],
+  dowhaKim[Object.keys(dowhaKim)[2]]
+);
 // 그 객체에 key와 value의 쌍은 몇개가 있나요?
-
+const dowhaKimNo = Object.keys(dowhaKim).length;
+console.log(dowhaKimNo);
 // 같은 key들을 가진 객체를 두 개 더 만들고, 세 개의 객체를 하나의 배열로 만들어 변수에 대입해보세요.
-
+const mikeKim = { name: "Mike Kim", age: 28, location: "USA" };
+const mintPark = { name: "Mint Park", age: 27, location: "Seoul" };
+const myLabour = [dowhaKim, mikeKim, mintPark];
+console.log(myLabour);
 // 방금 만든 객체들의 배열의 2번째 항목의 name 이라는 key의 value를 출력해 보세요.
-
+console.log(myLabour[1].name);
 // 5개의 key를 가진 객체를 하나 만들어 변수에 대입해 보는데, 모든 key의 value가 다른 자료형이 갖도록 해보세요.
-
+const obj = {
+  name: "Dowha Kim",
+  age: 29,
+  livingOverseas: true,
+  universities: ["Yonsei", "York"],
+  socialMedia: { twitter: "fadokim", facebook: "dowha_kim" }
+};
+console.log(obj);
 // 그중 배열을 value로 갖는 key가 있을텐데, 그 항목의 배열의 길이를 출력해보세요.
+console.log(obj.universities.length);
 
 // <조건문과 반복문>
 
 // 변수 하나를 선언하고, 숫자를 대입해 보세요. 그리고 그 변수가 5보다 크면, “5보다 큽니다!”라고 출력하고, 5보다 작거나 같으면 “5보다 작아요!”라고 출력해보세요.
+
 // 문자열인 변수 x와 y를 선언하고, x가 y보다 사전상 먼저 나온다면, “앞단어", 뒤에 나온다면 “뒷단어", 같으면 “같은 단어"를 출력하도록 해보세요.
+
 // 위를 다른 순서로 해보세요.
+
 /*  변수를 하나 선언하고, 문자열을 대입해 보세요.
 그리고 그 문자열에 띄어쓰기로 구분된 단어가
  i) 5개 이상이면, “긴 문장입니다~”를 출력하고,
  ii) 3개 이상이면, “중간 문장입니다~”를 출력하고,
  iii) 3개 미만이면, “짧은 문장입니다~”를 출력해보세요.
  */
+
 /* 변수 하나를 선언하고, 문자열의 배열 하나를 만들어 대입해보세요.
  배열의 길이는 5보다 크게 하고, 문자열의 길이는 모두 다르게 만들어보세요.
  그리고 그 배열의 항목들을 모두 출력해보세요.
  */
+
 // 위의 내용을 다른 방법으로 해볼까요?
+
 // 아래 모양을 가진 행렬을 만들어 변수에 대입해보고, 행렬의 행/열/항목을 출력해보세요. 예) “1행 3열은 3입니다." 1행을 모두 출력한 다음, 2행을 출력합니다.
+
 //객체 하나를 선언하고 변수에 대입해보세요. 그 객체의 key와 value를 하나하나 출력해보세요.
 
 //9~12번은  for문과 while문으로 각각 해보세요.
+
 // 배열을 하나 선언해보세요 (= 변수를 선언하고, 그 변수에 배열을 대입하세요). 그 배열의 길이가 3보다 크면 배열의 항목들을 출력하도록 해보세요.
+
 // 배열들로 구성된 배열을 선언해보세요. (배열의 항목이 배열이 되는 식, 모두 숫자로)
+
 // 각 배열의 항목인 배열의 길이가 5보다 크면, “길이가 5보다 큰 배열!”이라고 출력해보세요.
+
 // 위의 배열에서, 각 배열의 항목인 배열의 길이가 3보다 작거나 같으면, 그 배열 (항목인 배열)의 항목들에 3을 더해보세요. 예) [[1, 2, 3], [1, 2, 3, 4]]이면, [[4, 5, 6], [1, 2, 3, 4]]가 되도록
+
 //길이가 20 이상인 배열을 선언하고, 5번째 항목만 출력해보세요.
+
 /*아래 내용은 코드로 짜는 것이 아니라, 그 답을 써보세요. (계산기는 써도 됩니다.)
 (17 + 21) % 3 * 2
 17 + 21 % 3 * 2
