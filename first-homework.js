@@ -165,141 +165,267 @@ console.log(obj.universities.length);
 // <조건문과 반복문>
 
 // 변수 하나를 선언하고, 숫자를 대입해 보세요. 그리고 그 변수가 5보다 크면, “5보다 큽니다!”라고 출력하고, 5보다 작거나 같으면 “5보다 작아요!”라고 출력해보세요.
-
+const bigger5 = 10;
+if (bigger5 > 5) {
+  console.log("5보다 큽니다!");
+} else {
+  console.log("5보다 작야요!");
+}
 // 문자열인 변수 x와 y를 선언하고, x가 y보다 사전상 먼저 나온다면, “앞단어", 뒤에 나온다면 “뒷단어", 같으면 “같은 단어"를 출력하도록 해보세요.
-
+const x = "student";
+const y = "teacher";
+if (x.localeCompare(y) < 0) {
+  console.log("앞단어");
+} else if (x.localeCompare(y) > 0) {
+  console.log("뒷단어");
+} else if (x.localeCompare(y) == 0) {
+  console.log("같은 단어");
+}
 // 위를 다른 순서로 해보세요.
-
+const xx = "milk";
+const yy = "muffin";
+if (xx.localeCompare(yy) == 0) {
+  console.log("같은 단어");
+} else if (xx.localeCompare(yy) > 0) {
+  console.log("뒷단어");
+} else if (xx.localeCompare(yy) < 0) {
+  console.log("앞단어");
+}
 /*  변수를 하나 선언하고, 문자열을 대입해 보세요.
 그리고 그 문자열에 띄어쓰기로 구분된 단어가
  i) 5개 이상이면, “긴 문장입니다~”를 출력하고,
  ii) 3개 이상이면, “중간 문장입니다~”를 출력하고,
  iii) 3개 미만이면, “짧은 문장입니다~”를 출력해보세요.
  */
-
+const text = "아버지가 방에 들어가신다. 레알루 진짜루 정말루.";
+const text2 = text.split(" ");
+if (text2.length >= 5) {
+  console.log("긴 문장입니다~");
+} else if (text2.length >= 3 && text2.length < 5) {
+  console.log("중간 문장입니다~");
+} else if (text2.length < 3) {
+  console.log("짧은 문장입니다~");
+}
 /* 변수 하나를 선언하고, 문자열의 배열 하나를 만들어 대입해보세요.
  배열의 길이는 5보다 크게 하고, 문자열의 길이는 모두 다르게 만들어보세요.
  그리고 그 배열의 항목들을 모두 출력해보세요.
  */
+let strAry = [];
 
+console.log(strAry);
 // 위의 내용을 다른 방법으로 해볼까요?
-
+let strAry2 = [];
+for (i = 0; i < 6; i++) {
+  let count = i + 1;
+  let result = "";
+  for (let m = 0; m < count; m++) result += "a"; // 잘 모르겠음
+  strAry2.push(result);
+}
+console.log(strAry2);
 // 아래 모양을 가진 행렬을 만들어 변수에 대입해보고, 행렬의 행/열/항목을 출력해보세요. 예) “1행 3열은 3입니다." 1행을 모두 출력한 다음, 2행을 출력합니다.
-
+const secondMatrix = [
+  [1, 2, 3, 4],
+  [5, 6, 7, 8],
+  [9, 10, 11, 12],
+  [13, 14, 15, 16],
+  [17, 18, 19, 20]
+];
+i = 0;
+j = 0;
+for (i = 0; i < secondMatrix.length; i++) {
+  for (j = 0; j < secondMatrix[i].length; j++) {
+    console.log(
+      i + 1 + "행 " + (j + 1) + "열은 " + secondMatrix[i][j] + "입니다."
+    );
+  }
+}
 //객체 하나를 선언하고 변수에 대입해보세요. 그 객체의 key와 value를 하나하나 출력해보세요.
-
+const testObj = { name: "김도화", age: "29", sex: "male", height: 183 };
+i = 0;
+while (i < Object.keys(testObj).length) {
+  console.log(Object.keys(testObj)[i]);
+  console.log(testObj[Object.keys(testObj)[i]]);
+  i++;
+}
 //9~12번은  for문과 while문으로 각각 해보세요.
-
 // 배열을 하나 선언해보세요 (= 변수를 선언하고, 그 변수에 배열을 대입하세요). 그 배열의 길이가 3보다 크면 배열의 항목들을 출력하도록 해보세요.
+//while
+let threeAry = [];
+i = 0;
+while (i < 5) {
+  threeAry.push(i);
+  if (threeAry.length > 3) {
+    console.log(threeAry);
+  }
+  i++;
+}
+//for
+let threeAry2 = [];
+for (i = 0; i < 5; i++) {
+  threeAry2.push(i);
+  if (threeAry2.length > 3) {
+    console.log(threeAry2);
+  }
+}
+// 배열들로 구성된 배열을 선언해보세요. (배열의 항목이 배열이 되는 식, 모두 숫자로) 각 배열의 항목인 배열의 길이가 5보다 크면, “길이가 5보다 큰 배열!”이라고 출력해보세요.
+//while
+let aryAry = [];
 
-// 배열들로 구성된 배열을 선언해보세요. (배열의 항목이 배열이 되는 식, 모두 숫자로)
-
-// 각 배열의 항목인 배열의 길이가 5보다 크면, “길이가 5보다 큰 배열!”이라고 출력해보세요.
+//for
+let aryAry2 = [];
 
 // 위의 배열에서, 각 배열의 항목인 배열의 길이가 3보다 작거나 같으면, 그 배열 (항목인 배열)의 항목들에 3을 더해보세요. 예) [[1, 2, 3], [1, 2, 3, 4]]이면, [[4, 5, 6], [1, 2, 3, 4]]가 되도록
+//while
+
+//for
 
 //길이가 20 이상인 배열을 선언하고, 5번째 항목만 출력해보세요.
-
-/*아래 내용은 코드로 짜는 것이 아니라, 그 답을 써보세요. (계산기는 써도 됩니다.)
-(17 + 21) % 3 * 2
-17 + 21 % 3 * 2
-12 * 6 > 67 && 21 < 4 / 2 * 6
-12 * 6 > 67 || 21 < 4 / 2 * 6
-let a = 21; let b = a++; a, b의 값은?
-let a = 21; let b = ++a; a, b의 값은?
-let a = 22; ++a > 22
-21 * ( 3 % 2 + 2 * ( 7 + 2 ) ) < 21 * ( ( 3 % 2 + 2 ) * ( 7 + 2 ) )
-! true && false || true
-! true && ( false || true )
-true && ( false || true )
-( true && false ) || true
-! ( true && false ) || true
-! ( ( true && false ) || true )
-3 > 2 && true
-3 < 3 && true
-( ( 21 % 5 > 5 ) || false ) && true
-( ! ( 21 % 5 > 5 ) || false ) && true
-! ( ( 21 % 5 > 5 ) || false ) && true
-! ( ! ( 21 % 5 > 5 ) || false ) && true
-*/
+//while
+let longAry = [];
+i = 0;
+while (i < 20) {
+  longAry.push(i);
+  i++;
+}
+console.log(longAry[4]);
+//for
+let longAry2 = [];
+for (i = 0; i < 20; i++) {
+  longAry2.push(i);
+}
+console.log(longAry2[4]);
+//아래 내용은 코드로 짜는 것이 아니라, 그 답을 써보세요. (계산기는 써도 됩니다.)
+// (17 + 21) % 3 * 2
+console.log(25.333333333333332);
+// 17 + 21 % 3 * 2
+console.log(31);
+// 12 * 6 > 67 && 21 < 4 / 2 * 6
+console.log(12);
+// 12 * 6 > 67 || 21 < 4 / 2 * 6
+console.log(true);
+// let a = 21; let b = a++; a, b의 값은?
+console.log("a = 21", "b = 22");
+// let a = 21; let b = ++a; a, b의 값은?
+console.log("a = 22", "b = 22");
+// let a = 22; ++a > 22
+console.log(true);
+// 21 * ( 3 % 2 + 2 * ( 7 + 2 ) ) < 21 * ( ( 3 % 2 + 2 ) * ( 7 + 2 ) )
+console.log(true);
+// ! true && false || true
+console.log(true);
+// ! true && ( false || true )
+console.log(false);
+// true && ( false || true )
+console.log(true);
+// ( true && false ) || true
+console.log(true);
+// ! ( true && false ) || true
+console.log(true);
+// ! ( ( true && false ) || true )
+console.log(false);
+// 3 > 2 && true
+console.log(true);
+// 3 < 3 && true
+console.log(false);
+// ( ( 21 % 5 > 5 ) || false ) && true
+console.log(false);
+// ( ! ( 21 % 5 > 5 ) || false ) && true
+console.log(true);
+// ! ( ( 21 % 5 > 5 ) || false ) && true
+console.log(true);
+// ! ( ! ( 21 % 5 > 5 ) || false ) && true
+console.log(false);
 
 //<함수>
 
 //숫자를 입력하면 그 제곱을 반환하는 함수를 만들어보세요.
-/*
-<실행 예제>
 function power(n) {
-	...
+  return Math.pow(n, 2);
 }
-
-console.log( power(4) ); // 1
-*/
+console.log(power(4));
+console.log(power(10));
 
 // 두 숫자를 입력해서, 둘다 짝수이면 true를 반환하고, 아니면 false를 반환하는 함수를 만들어보세요.
-/*
-<실행 예제>
 function two_evens(a, b) {
-	...
+  if (a % 2 === 0 && b % 2 === 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
-
-console.log( two_evens(3, 5) ); // false
-console.log( two_evens(4, 5) ); // false
-console.log( two_evens(4, 6) ); // true
+console.log(two_evens(3, 5));
+console.log(two_evens(4, 5));
+console.log(two_evens(4, 6));
 
 // 첫장에서 본 나이를 입력하면 적절한 버스 요금을 반환하는 수도 코드를 Javascript로 구현해보세요. (첫장의 조건과 같이)
-/*
-<실행 예제>
 function bus_fare(age) {
-	...
+  if (age < 4) {
+    return 0;
+  } else if (age <= 10) {
+    return 360;
+  } else if (age <= 16) {
+    return 720;
+  } else {
+    return 1250;
+  }
 }
-
-console.log( bus_fare(3) ); // 0
-console.log( bus_fare(10) ); // 360
-console.log( bus_fare(16) ); // 720
-console.log( bus_fare(23) ); // 1250
+console.log(bus_fare(3));
+console.log(bus_fare(10));
+console.log(bus_fare(16));
+console.log(bus_fare(23));
 
 // 기온과 습도를 입력하면, 날씨에 대해 설명을 출력하는 함수를 만들어보세요. (조건은 주석문 참고)
-/*
-<실행 예제>
 function weather(temperature, humidity) {
-	...
+  if (temperature < 5) {
+    return "cold";
+  } else if (5 <= temperature < 25) {
+    return "mild";
+  } else {
+    return "hot";
+  }
 }
 
-console.log( bus_fare(15, 72) ); // "It’s mild and humid."
-console.log( bus_fare(25, 36) ); // "It’s hot and dry."
-console.log( bus_fare(-5, 12) ); // "It’s cold and arid."
+console.log(weather(15, 72)); // "It’s mild and humid."
+console.log(weather(25, 36)); // "It’s hot and dry."
+console.log(weather(-5, 12)); // "It’s cold and arid."
+/*
+<실행 예제>
+
 // temperature < 5: "cold",
 // 5 <= temperature < 25: "mild",
 // 25 <= temperature: "hot"
 
 // humidity < 20: "arid",
 // 20 <= humidity < 50: "dry",
-// 50 <= humidity < 75: "humid"
+// 50 <= humidity < 75: "humid" 
 // 75 <= humidity : "super humid"
 */
 
 // 랜덤 숫자를 하나 뽑아서 그 숫자가 0.5보다 크면 true를 작으면 false를 반환하는 함수를 만들어보세요.
-/*
-<실행 예제>
 function fortune() {
-	...
+  if (Math.random() > 0.5) {
+    return true;
+  } else {
+    return false;
+  }
 }
-
-console.log( fortune() ); // true? false? random!
-*/
+console.log(fortune());
 
 // 한 숫자를 넣으면 1부터 그 숫자까지의 합을 구해 반환하는 함수를 만들어보세요. (재귀적으로!)
+
 /*
 <실행 예제>
 function n_sum(n) {
-	...
+	for (i = 0, i < n, i++) {
+		
+	}
 }
-
 console.log( n_sum(4) ); // 10
 console.log( n_sum(6) ); // 21
 */
 
 // 객체를 넣으면 key와 value를 하나씩 출력하는 함수를 만들어보세요. (hint: key들의 목록을 알면 쉽겠죠?)
+
 /*
 <실행 예제>
 function key_value(obj) {
@@ -317,6 +443,7 @@ console.log( key_value(obj_test) );
 */
 
 // 문자열로 된 배열을 넣으면 항목들을 하나씩 늘려 가면서 출력하는 함수를 만들어보세요 (예제를 참고).
+
 /*
 <실행 예제>
 function string_increment(string_array) {
@@ -332,6 +459,7 @@ console.log( string_increment(test_string_array) );
 */
 
 // 문자열로 된 배열을 넣으면, 길이가 5보다 긴 문자열은 모두 대문자로, 그렇지 않으면 모두 소문자로 바꿔보세요. (반환하지 않고 값을 직접 바꾸기)
+
 /*
 <실행 예제>
 function string_checker(string_array) {
@@ -344,6 +472,7 @@ console.log( string_checker(test_string_array2) );
 */
 
 // 가전 기구들의 전원 상태를 담은 객체가 있으면, 가전 기구의 이름을 넣어 해당 가전 기구의 전원 상태가 true/false 사이에서 전환되는 함수를 만들어보세요.
+
 /*
 <실행 예제>
 let appliance = {
